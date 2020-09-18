@@ -77,7 +77,7 @@ Esto generará tu sitio en el directorio `/build_production` desde la dirección
 
 If you are [using Laravel Mix to compile your assets](/docs/compiling-assets) (which is included in the default Jigsaw setup), you can preview your site with Browsersync by simply running:
 
-Si estás [usando Laravel Mix para compilar tus assets](/doc/compiling-assets)(el cual está incluido por defecto en la configuración de Jigsaw), puedes previsualizar tu sitio con Browsersync, simplemente ejecuta:
+Si estás [usando Laravel Mix para compilar tus assets](es/doc/compiling-assets)(el cual está incluido por defecto en la configuración de Jigsaw), puedes previsualizar tu sitio con Browsersync, simplemente ejecuta:
 
 ```
 $ npm run watch

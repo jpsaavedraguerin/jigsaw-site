@@ -4,7 +4,7 @@ section: documentation_content
 ---
 
 #### [Collections](/docs/collections)
-#### [Collecciones](/docs/collections)
+#### [Collecciones](es/docs/collections)
 ## Extending Parent Templates
 ## Extendiendo las plantillas originaria
 
@@ -99,7 +99,7 @@ section: content
 
 If using multiple parent templates, you can specify separate paths in `config.php` for each resulting page:
 
-Si se usan multiples plantillas originarias, se puede especificar rutas separadas en el archivo `config.php` para cada página resultante: 
+Si usas multiples plantillas originarias, se puede especificar rutas separadas en el archivo `config.php` para cada página resultante: 
 
 > _config.php_
 

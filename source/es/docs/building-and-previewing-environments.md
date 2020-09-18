@@ -3,7 +3,7 @@ extends: _layouts.documentation
 section: documentation_content
 ---
 
-#### [Building & Previewing](/docs/building-and-previewing)
+#### [Building & Previewing](es/docs/building-and-previewing)
 ## Environments
 
 Often you might want to use different site variables in your development and production environments. For example, in production you might want to render your Google Analytics tracking snippet, but not include it in development so you don't skew your results.
