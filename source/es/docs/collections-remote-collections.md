@@ -3,16 +3,16 @@ extends: _layouts.documentation
 section: documentation_content
 ---
 
-#### [Collections](/docs/collections)
-## Remote Collections
+#### [Colecciones](/es/docs/collections)
+## Colecciones Remotas.
 
-In addition to using Markdown or Blade files for your collection items, you can return collection items directly from the `collections` array in `config.php`. This allows you to generate items programmatically—for example, you can [fetch items from a remote source](#remoteItems) such as an external API or API-based content management systems like Contentful, GraphCMS, or DatoCMS.
+Adicionalmente a Markdown o archivos Blade para los items de tu colección, puedes retornar los items de la colección directamente desde el array `collections` del archivo `config.php`. Esto te permitirá generar items de forma programada, por ejemplo, puedes [incluir elementos desde una fuente remota](#remoteItems) como una API externa o de sistemas de gestión de contenidos, como Contentful, GraphCMS, o DatoCMS.
 
 ---
 
-### Building collection items in config.php
+### Generando items de una colección en config.php
 
-For any collection, items can be built by returning an array or collection of `items` from the collection's configuration array in `config.php`. Each item should be an array; the keys of the item will be converted to page variables (such as those that would typically appear in the YAML header of a Markdown file), while the value of the `content` key will serve as the content of the collection item. This content will be parsed as Markdown, and thus can contain either Markdown or HTML content; it will be available within your Blade templates with `@yield('content')` or by echoing `{!! $page->getContent() !!}`:
+Para cualquier colección, los items pueden ser generados al retornar un array o colección de `items` desde el array de atributos de configuración de la colección que está ubicado en `config.php`. Cada item debería ser un array, para los cuales los atributos del item serán convertidos en variables de página (tales como aquellos que aparecen típicamente en la cabecera YAML del archivo Markdown), mientras que el valor de la variable `content` será ejecutado como el contenido del ítem de la colección. Este contenido será leido como Markdown, y por lo tanto, puede contener tanto Markdown como HTML; estará disponible dentro de la plantilla Blade mediante `@yield('content')` o `{!! $page->getContent() !!}`:
 
 >_config.php_
 
@@ -48,15 +48,15 @@ return [
 @endsection
 ```
 
-Under the hood, Jigsaw will:
+Tras bambalinas, Jigsaw hará lo siguiente: 
 
-1. Create a `_tmp` directory in the collection's directory (e.g. `source/_posts/_tmp`) to store temporary Markdown files for each remote collection item
-2. Process the temporary files as though they were `*.blade.md` files
-3. Remove the temporary files when `jigsaw build` is complete
+1. Crear un directorio `_tmp` en el directorio de la colección (por ejemplo, . `source/_posts/_tmp`) para almacenar temporalmente los archivos Markdown para cada item de la colección  
+2. Procesar los archivos temporales como si fueran archivos `*.blade.md`   
+3. Eliminar los archivos temporales cuando el proceso  `jigsaw build` finalice    
+Adicionalmente a `content`, cada item puede especificar un atributo `filename`, el cual será usado como el nombre temporal del archivo Markdown. Si es omitido, el valor por defecto será el nombre de la colección seguido por un índice; `post_1.blade.md`, `post_2.blade.md`, etc. La ruta del archivo 
+resultante será procesada según las reglas por defecto para el manejo de colecciones. 
 
-In addition to `content`, each item can specify a `filename` key, which will be used as the name of the temporary Markdown file. If omitted, the filename will default to the name of the collection followed by an index, so `post_1.blade.md`, `post_2.blade.md`, etc. The resulting `path` of the output file will be processed according to the normal rules for collections.
-
-Alternatively, the `items` array can contain simple string values, which will be treated as the item's Markdown content, with no page variables:
+Alternativamente, el array de `items` puede contener simples cadenas de strings, los que serán tratados como contenido Markdown, sin variables de página: 
 
 >_config.php_
 
