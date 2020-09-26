@@ -78,9 +78,11 @@ return [
 ---
 
 <a name="remoteItems"></a>
-### Fetching collection items from a remote API
+### Obteniendo items para una colección desde una API remota
 
 The `items` key in `config.php` can also reference a closure that returns an array or collection of items. By using a closure, collection items can be fetched from anywhere—from a remote API, from other places on the filesystem, or built up programmatically. The resulting data can then be transformed before collection items are built. For example:
+
+El atributo `items` de tu colección en el archivo `config.php` puede refernciar un closure que retorne un array o colección de elementos. Usando un closure se pueden obtener los items de la colección desde cualquier origen a traves de una API, desde otras ubicaciones en el sistema de archivos, o generarlos de forma programática. La DATA resultante puede ser transformada después, antes de que los items de la colección sean generados. Por ejemplo: 
 
 >_config.php_
 
@@ -106,6 +108,9 @@ return [
 
 If you want the remote API to only be called when building for particular environments, you can place the `items` closure in the appropriate `config.{environment}.php` file. For example, to only access your remote API when running `build production`, create a `config.production.php` file and include your `items` closure there. This will prevent potentially long build times while running `build local` in development.
 
+Si quieres que la API remota sólo sea llamada en un entorno en particular, puedes ubicar el closure `items` en el archivo `config.{environment}.php` correspondiente. Por ejemplo, para acceder a la API remota sólo cuando se ejecute `build production`, crea un archivo `config.production.php` e incluye el closure `items` allí. Esto evitará que `build local` potencialmente pueda tardar más de forma innecesaria cuando estamos en un entorno de desarrollo.
+
 The `items` closure receives the `config` array as a parameter, so you may also reference other config values (for example, an API URL) inside the closure.
 
+El closure `items` recibe el array desde `config` como parámetro, así que es posible referenciar otros valores (por ejemplo, una API URL) dentro del closure.
 
