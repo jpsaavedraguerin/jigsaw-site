@@ -4,8 +4,11 @@ section: documentation_content
 ---
 
 ## Collections
+## Colecciones
 
 Jigsaw provides powerful features for working with groups of related pages, or _collections_. Collections give you the ability to access your content at an aggregate level, enabling you to easily add near-dynamic features like menus, pagination, categories, and tags to your static site.
+
+Jigsaw provee caracteristicas poderosas para trabajar con grupos de páginas relaiconadas, o _collections_. Las colecciones permiten acceder al contenido de un nivel agregado, permitiendo facilmente características casi dinámicas como menús, paginación, categorías, y tags al sitio estático. 
 
 Collections can be used to generate pages of related content—for example, blog posts or articles that are sorted by date, with an index page displaying summaries of the five most recent posts—or for embedding related blocks of content _within_ a page, for content like staff bios, product descriptions, or a portfolio of projects.
 
